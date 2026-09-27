@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #f0fdf4;
+    --bg-card: rgba(255, 255, 255, 0.65);
+    --border-card: rgba(16, 185, 129, 0.25);
+    --text-primary: #064e3b;
+    --text-muted: #047857;
+    --accent-glow: rgba(16, 185, 129, 0.2);
+  }
+
+  .dark {
+    --bg-primary: #05140b;
+    --bg-card: rgba(10, 34, 19, 0.55);
+    --border-card: rgba(16, 185, 129, 0.3);
+    --text-primary: #ecfdf5;
+    --text-muted: #a7f3d0;
+    --accent-glow: rgba(52, 211, 153, 0.25);
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-card);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s ease;
+}
+
+.glass-panel-hover:hover {
+  background: var(--bg-card);
+  border-color: rgba(52, 211, 153, 0.6);
+  box-shadow: 0 8px 32px 0 var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.text-glow {
+  text-shadow: 0 0 16px var(--accent-glow);
+}
